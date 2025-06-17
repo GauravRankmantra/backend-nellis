@@ -4,6 +4,10 @@ const { upload } = require("../../middlewares/multer.middleware.js");
 
 const dealerController = require("../../controllers/dealer.controller.js");
 
+router.get("/", dealerController.getAllDealerships);
+router.get("/search", dealerController.searchDealerships);
+router.get("/searchIdName",dealerController.getDealershipNamesAndIds)
+
 router.post(
   "/",
   upload.fields([
@@ -18,7 +22,7 @@ router.post(
   ]),
   dealerController.createDealership
 );
-router.get("/", dealerController.getAllDealerships);
+
 router.put(
   "/:id",
   upload.fields([
@@ -33,6 +37,6 @@ router.put(
   ]),
   dealerController.updateDealership
 );
-router.delete('/:id',dealerController.deleteDealership)
+router.delete("/:id", dealerController.deleteDealership);
 
 module.exports = router;
