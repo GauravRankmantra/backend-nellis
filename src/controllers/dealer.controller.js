@@ -126,6 +126,26 @@ module.exports.updateDealership = asyncHandler(async (req, res, next) => {
   });
 });
 
+module.exports.getDealershipById = asyncHandler(async (req, res, next) => {
+  const { id } = req.params;
+
+  const dealership = await Dealership.findById(id);
+
+  if (!dealership) {
+    return sendResponse(res, {
+      statusCode: 404,
+      message: "Dealership not found",
+    });
+  }
+
+  sendResponse(res, {
+    statusCode: 200,
+    message: "Dealership fetched successfully",
+    data: dealership,
+  });
+});
+
+
 module.exports.createDealership = asyncHandler(async (req, res, next) => {
   const {
     name,
