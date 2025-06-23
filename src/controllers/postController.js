@@ -2,7 +2,7 @@ const ErrorHandler = require('../utils/ErrorHandler.js');
 const asyncHandler = require('../utils/asyncHandler.js');
 const sendResponse = require('../utils/sendResponse');
 const { uploadFile, destroyFile } = require('../services/cloudinary.js');
-const Post = require('../models/Post.js');
+const Post = require('../models/post.js');
 
 module.exports.createPost = asyncHandler(async (req, res, next) => {
   const { title, content, author, tags, status } = req.body;
