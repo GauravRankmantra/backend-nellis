@@ -326,3 +326,13 @@ module.exports.getDealershipNamesAndIds = asyncHandler(
     }
   }
 );
+
+
+module.exports.totalDealer = asyncHandler(async (req, res, next) => {
+  const contact = await Dealership.countDocuments({});
+  sendResponse(res, {
+    statusCode: 200, 
+    message: "Contact total",
+    data: contact,
+  });
+});

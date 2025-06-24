@@ -403,3 +403,12 @@ module.exports.deleteVehicle = asyncHandler(async (req, res, next) => {
     data: null, // No data returned on deletion success
   });
 });
+
+module.exports.totalVehicle = asyncHandler(async (req, res, next) => {
+  const contact = await Vehicle.countDocuments({});
+  sendResponse(res, {
+    statusCode: 200, // 200 OK
+    message: "Contact total",
+    data: contact,
+  });
+});

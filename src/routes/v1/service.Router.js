@@ -4,6 +4,7 @@ const router = express.Router();
 const serviceController = require("../../controllers/serviceController.js");
 
 router.get("/", serviceController.getAllServices);
+router.get("/totalService",serviceController.totalService)
 // router.get("/search", serviceController.searchDealerships);
 // router.get("/searchIdName", serviceController.getDealershipNamesAndIds);
 

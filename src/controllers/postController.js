@@ -162,3 +162,13 @@ module.exports.deletePost = asyncHandler(async (req, res, next) => {
     data: null,
   });
 });
+
+
+module.exports.totalBlog = asyncHandler(async (req, res, next) => {
+  const contact = await Post.countDocuments({});
+  sendResponse(res, {
+    statusCode: 200, // 200 OK
+    message: "Contact total",
+    data: contact,
+  });
+});

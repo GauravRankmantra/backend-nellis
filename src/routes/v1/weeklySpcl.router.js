@@ -4,6 +4,7 @@ const { upload } = require("../../middlewares/multer.middleware.js");
 const weeklyController = require("../../controllers/weeklySpcl.controller.js");
 
 router.get("/", weeklyController.getAllWeeklySpecials);
+router.get("/totalWeekly",weeklyController.totalWeekly)
 router.post(
   "/",
   upload.fields([

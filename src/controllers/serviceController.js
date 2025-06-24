@@ -172,3 +172,13 @@ module.exports.deleteService = asyncHandler(async (req, res, next) => {
     data: null,
   });
 });
+
+
+module.exports.totalService = asyncHandler(async (req, res, next) => {
+  const contact = await Service.countDocuments({});
+  sendResponse(res, {
+    statusCode: 200, // 200 OK
+    message: "Contact total",
+    data: contact,
+  });
+});

@@ -295,3 +295,12 @@ module.exports.deleteWeeklySpecial = asyncHandler(async (req, res, next) => {
     data: null,
   });
 });
+
+module.exports.totalWeekly = asyncHandler(async (req, res, next) => {
+  const contact = await WeeklySpecial.countDocuments({});
+  sendResponse(res, {
+    statusCode: 200, // 200 OK
+    message: "Contact total",
+    data: contact,
+  });
+});

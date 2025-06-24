@@ -6,8 +6,10 @@ const dealerController = require("../../controllers/dealer.controller.js");
 
 router.get("/", dealerController.getAllDealerships);
 router.get("/search", dealerController.searchDealerships);
+router.get("/totalDealer",dealerController.totalDealer)
 router.get("/searchIdName",dealerController.getDealershipNamesAndIds)
 router.get("/:id", dealerController.getDealershipById);
+
 
 
 router.post(

@@ -5,6 +5,7 @@ const { upload } = require("../../middlewares/multer.middleware.js");
 const vehicleController = require("../../controllers/vehicleController.js");
 
 router.get("/", vehicleController.getAllVehicles);
+router.get("/totalVehical",vehicleController.totalVehicle)
 // router.get("/search", vehicleController.searchDealerships);
 // router.get("/searchIdName",vehicleController.getDealershipNamesAndIds)
 
