@@ -1,6 +1,6 @@
 const asyncHandler = require("../utils/asyncHandler");
 const Contact = require("../models/contact");
-const ErrorHandler = require("../utils/errorHandler");
+const ErrorHandler = require("../utils/ErrorHandler");
 const sendResponse = require("../utils/sendResponse");
 
 exports.createContact = asyncHandler(async (req, res, next) => {
