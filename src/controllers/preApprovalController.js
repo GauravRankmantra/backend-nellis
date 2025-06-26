@@ -1,7 +1,7 @@
 const ErrorHandler   = require("../utils/ErrorHandler.js");
 const asyncHandler   = require("../utils/asyncHandler.js");
 const sendResponse   = require("../utils/sendResponse");
-const PreApproval    = require("../models/PreApproval.js");
+const PreApproval    = require("../models/preApproval.js");
 
 // @desc    Create new pre-approval application
 // @route   POST /api/v1/preapprovals
